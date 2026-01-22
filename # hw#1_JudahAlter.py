@@ -42,3 +42,11 @@ for n in range(items):
 
     
 # Problem 2 Astronaut Training Fatigue Tracker
+
+Day = int(input("Enter the number of training hours tracked in a day:"))
+
+for n in range(Day):
+    fatigue = int(input("Enter your fatige level for the hour (0-10):"))
+    
+
+
