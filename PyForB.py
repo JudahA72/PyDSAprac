@@ -56,11 +56,48 @@ print(not(a)) # returns True
 print(not(a and b)) # returns True
 
 # 4 - Functions
-def demo(n):# function decleration includes keyword def, function name(greet) paraentheses that can include internal variables and colon to delcare
+
+def demo(n:int)-> bool:# function decleration includes keyword def, function name(greet) paraentheses that can include internal variables and colon to delcare
+    # You should usually create type hints in your parameters as to show what each arguement should be n should be an integer and the function will return a bool in the end
     print("Hello world!") # indent to begin and put code in. Function cannot be empty,basic print statement for now
     print(n)#function now prints n
+    msg = print(f"The final number is {x}") # can use f string to pass in variables or in this case the parameter for the function
+    msg1 = print("This is the number printed in a diff way",x) # A comma can be used in the print statement to convert it to a string
+    msg3 = print("Another print way " + str(n)) # You can string concatenate by converting it to a string using str()
+    return True if n > 5 else False # can also use a return statement which will gave a value to the function so it can be called later not just plain running it
 
-demo() # now when calling the function you call by its name and any parameters it has when defined
+x = 10
+
+result = demo(10) # now when calling the function you call by its name and any parameters it has when defined
+# function now has a return statement which means now you can call upon its value at any time by setting another variable equal to its function call aka result
+print(demo(3)) # Can also see output of function by calling it in a print statement which is common for functions that return something 
+print(result)
+demo(20)
+# Parameters let the user pass different values to the functions and get different results
+# An argument is the data you pass into the functions parameters to call it
+
+def add_one(x:int)-> int:# simple function to show scope
+    x += 1
+    print("Added one to the value of x: ",x)
+    return x
+
+y = 10 # Basically I created this variable to act as the argument for this function when calling
+add_one(y) # Basic function call that adds 1 to y and then prints that statement in the function as output
+print(add_one(y)) # This function prints not only the statement made in the function but also the actual value produced by the function
+# the output for the above function is Added one to the value of x: 11 and 11.
+# This is because it not only runs the function but prints the value the function returns 
+print(y) # The value outside the function y which is used for the argument is actually never changed because its on a global scope not affected by an interior functions local changes
+
+
+# Functions can also be given default values like:
+def example(name="Judah", letter = "J")-> None:
+    print(name+letter)
+
+example() # You can call the function using no arguements meaning not calling any of the values and it will use default ones
+example("Steve") # You can also call function with arguements ranging up to the number of parameters changing 1 or all of the parameters values from their default one
+
+# 5 - Conditional Arguements
+
 
 
 
