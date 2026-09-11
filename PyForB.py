@@ -95,8 +95,34 @@ def example(name="Judah", letter = "J")-> None:
 
 example() # You can call the function using no arguements meaning not calling any of the values and it will use default ones
 example("Steve") # You can also call function with arguements ranging up to the number of parameters changing 1 or all of the parameters values from their default one
+example(name = "Marina", letter = "Z") # can call the function by actually using the parameter name. despite scope since your calling the example function you can reference parameters
 
 # 5 - Conditional Arguements
+
+def comparisonarg(x:int, y:int) -> bool:# creating a function to show comparison operations
+    z = x==y # can actually set a variable equal to an operation
+    print(z) # can print the value that operation provides
+    return z # function returns the boolean value of operation 
+
+comparisonarg(7,6)# prints and returns false
+
+def comparison2(y:int,z:int)-> bool:
+    return x<=y
+
+x,y= 6,7
+print("is x less than or equal to y here: ", comparison2(x,y))# string concatenate with , then call the function with arguments and it returns a boolean value based off inputs
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
