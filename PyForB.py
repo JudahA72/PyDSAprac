@@ -113,6 +113,67 @@ x,y= 6,7
 print("is x less than or equal to y here: ", comparison2(x,y))# string concatenate with , then call the function with arguments and it returns a boolean value based off inputs
 
 
+def minimum(a:int, b:int)->int: #functions can also use if elif else statements to define what it should return
+    if a>b:
+        return a
+    elif b>a and b>0: #can use opeartors like and or not inside of else if statements for conditions
+        return b
+    else:
+        return a or b #can have it return either since this case is really saying since they are equal return either a or b
+
+print(minimum(25,20))
+print(minimum(25,-25))
+print(minimum(25,25))
+print(minimum(20,25))
+
+
+# Weird use case truthy and falsey using an if statement to evalue to True or False
+
+def is_truthy(value)->str:
+    if value:
+        return("Truthy")
+    else:
+        return("Falsy")
+
+print(0,"is",is_truthy(0)) #Remember can use f"..{}" strings or , or + to concatenate strings and can have function call within print statements to show what function returns
+print(10,"is",is_truthy(10))
+
+
+# 6 - Loops
+
+i = 0
+while i<4: #while loop is mainly used to specify input until somehting happens to break loop
+    print(f"This should print 4 times and the time now is {i}") #begins with 0 and goes to 3. Index at 0, length is 4, can also increment by any amount +=10 instead
+    i+=1
+
+
+for i in range(4): # for loops similar to while will print numbers 0-4
+    print(i)
+
+# Structure- For(keyword) then variable name being incremented, then in(keyword), then specify sequence to iterate. range is whatever set to in beginning to length - 1
+
+for i in range(5,9,2): # can pass up to three arguments into range function so it will print from the range 5-8 iterating by 2 at a time so only prints 5 and 7, can also range backwards
+    print(i)
+
+# Nested Loops with question suppose you wanted to print all possible paris from set 1,2,3 and order of the pairs matter
+# so 1,1 , 1,2 , 1,3
+#    2,1 , 2,2 , 2,3
+#    3,1 , 3,2 , 3,3
+# can be accomplished by placing a loop inside of another called nested looping
+
+for i in range(1,4):
+    for j in range(1,4):
+        print(i,j)# each value is a seperate argument for the print function 
+# prints it down by going through first loop so 1 then iterating through second 3 times so 1,1 1,2 1,3
+# then you loop back and now its 2,1 2,2 2,3 and then to 3 for the same thing. So really first loop runs 3 times while second loop runs 9 times since its nested or 3x3=9
+# loops do not create their own scope so you have to use different variable names for the nested loop
+# inner loop runs to completion before outer loop continues
+
+
+# can also use control flow statements which are break, pass , and continue
+
+# 7 - Strings
+
 
 
 
