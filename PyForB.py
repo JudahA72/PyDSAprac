@@ -174,6 +174,22 @@ for i in range(1,4):
 
 # 7 - Strings
 
+def stringlength(str1:str, str2:str,)-> str: # function to return string length, using len() function
+    if len(str1) >= len(str2): # operator to see if string1 is longer than string2 return string1
+        return str1
+
+    return str2
+
+print(stringlength("Judah","Luca + Steven")) # prints string with longest length or str2
+
+name = 'Judah'
+for i in name: # this runs a for loop that returns each letter in order, iterating over the string name
+    print(i)
+
+print
+
+
+
 
 
 
