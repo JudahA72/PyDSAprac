@@ -163,7 +163,7 @@ for i in range(5,9,2): # can pass up to three arguments into range function so i
 
 for i in range(1,4):
     for j in range(1,4):
-        print(i,j)# each value is a seperate argument for the print function 
+        print(f"{i},{j}")# each value is a seperate argument for the print function 
 # prints it down by going through first loop so 1 then iterating through second 3 times so 1,1 1,2 1,3
 # then you loop back and now its 2,1 2,2 2,3 and then to 3 for the same thing. So really first loop runs 3 times while second loop runs 9 times since its nested or 3x3=9
 # loops do not create their own scope so you have to use different variable names for the nested loop
@@ -186,7 +186,26 @@ name = 'Judah'
 for i in name: # this runs a for loop that returns each letter in order, iterating over the string name
     print(i)
 
-print
+print(name[4])# indexed 0-4 so it prints h in Judah
+print(len(name)) # prints the actual length of the variable starting at index 1
+
+my_string = "Hello, World!"
+
+length = len(my_string) # 13
+
+for i in range(length):
+    print(my_string[i])
+
+# basic example of using range function to print out each letter at each index
+# range returns a sequence of numbers and lets you use index of each number to print it(important when needing index)
+# in keyword lets you loop over string without needing index
+
+new_string = "Judah, Alter!"
+start,end = 1,5
+print(new_string[start,end])# slicing this extracts the substring from new_string and prints from index 1 to 5
+
+
+
 
 
 
