@@ -321,13 +321,44 @@ print(count_characters("Hello"))
 # can remove item from dictionary using .pop() function or del keyword
 # can also use .values in list to get the values of the keys if needed in a for loop or converting to a list
 
+# 11 - Reading standard input 
 
+# using index() keyword user types in what they want printed to console
+# base case is a string if want to convert use a type conversion
+#ex: a
+# age = int(input("Please give your age: "))
 
+# you can use .split method to convert string of input into a list
 
+# 12- Exception Handling
+# can manipulate and control errors by doing handling sequences
 
+# try: and except:
 
+try:
+    # code that might cause an error
+    result = 10 / 0
+except:
+    print("An error occurred!")
 
+# you can actually see the error and store it in a variable by using keyword as then name of variable
 
+try:
+    result = 10 / 0
+except Exception as error:
+    print("Error:", error)
+
+# can actually use multiple exception statements to see different type of errors
+try:
+    num1 = int(a)
+    num2 = int(b)
+    result = num1 / num2
+except ValueError:
+    print("Error: Invalid value!")
+except ZeroDivisionError:
+    print("Error: Division by zero!")
+except Exception as error:
+    print("An error occurred:", error)
 
 
 
