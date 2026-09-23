@@ -1,3 +1,8 @@
+from typing import List
+from typing import Tuple
+from typing import Set
+from typing import Dict
+
 # Basics of Python for Beginners Review / 2027 SWE Recruiting
 
 # Can can change the value of variables at any time (dynamic typing)
@@ -202,18 +207,119 @@ for i in range(length):
 
 new_string = "Judah, Alter!"
 start,end = 1,5
-print(new_string[start,end])# slicing this extracts the substring from new_string and prints from index 1 to 5
+print(new_string[start:end])# slicing this extracts the substring from new_string and prints from index 1 to 5
+
+def first_n_characters(s: str, n: int) -> str:
+    return s[:n]
+#important function to demonstrate how when needing the first characters of something you slice almost backwards because you want it to end at n characters
+# the opposite is true so to get the last n characters 
+
+def last_n_characters(s:str, n:int) -> str:
+    start = len(s) - n # this is done to get to find the last n characters in a list length of list minus n characters
+    return s[start:] # returning all characters beginning at the index value of start
+
+# can reverse a string by using the step as a negative number
+ # print(string[start:end:step])
+ # strings are also immutable 
+
+# 8 - Lists(Important)
+
+my_list = [1,2,3] # collection of items stored in a specific order and mutuable
+ # List can be accessed based off index and length
+ # List can be used in conditional statements 
+ # Lists can be iterated using for loops
+
+for element in my_list: # used in instead of range(len(my_list)) since its more consicse
+    print(element)
+    # only really use range(len) if you need the index if not then the in operator works fine
+
+print(sum(my_list)) # 3 different functions that can sum or find the min/max of a list
+print(min(my_list))
+print(max(my_list))
+
+my_list.append(4) # can add to the end of the list using the method append
+# did not create a new list, original list has been modified
+my_list.pop()
+# you can pop from any index by specifing it or popping from the last n indexes using a for loop
+
+def pop_n_from_list(new_list:List[int],n:int) -> List[int]:
+    for i in range(n): # range n generates a sequence of numbers from 0 to n-1 
+        new_list.pop() # you dont use i here bc it will actually pop at each index in loop rather than just the last index in loop one at a time
+    return new_list # the loop simply acts as a counter to pop n times
+
+print(pop_n_from_list([1, 2, 3, 4, 5], 2))
+
+# can use the .index(element) method to print the index of the first occurence of element in the list
+# can slice lists the same way you do strings [start:end:step]
+ # Tuples are similar to lists except they are immutable and meant to be used to store related non changing data
+
+my_tuple = (1,2,3)
+
+# 9 - Sets
+# Unordered, unique elements, can be converted to a list if order is important
+# created with curly {} braces
+
+my_set = set()
+my_set.add(1) # add statements can take exactly one arugment
+my_set.add(2)
+my_set.add(1)
+
+print(my_set) # will return only 1,2 since it cannot contain duplicate elements
+
+# can remove elements in a set using .remove() and will return keyvalue error if element not present
+
+my_set.remove(1)
+print(my_set) # now removed 1 from set
+# easy way to remove duplicates from a list by converting into a set then back into a new list
+# can also use the keyword in to check if an element is present in list, this is an o(1) ST operation
+# the in funciton acts as a bool check and returns True or False, can use len on sets
 
 
 
+# 10 - Dicts
+# key value pairs, mapping a key to a value -> hashmap
+my_dict = {"Alice": 25, "Bob": 30, "Charlie": 35}
+
+my_dict = {
+    "Alice": 25,
+    "Bob": 30,
+    "Charlie": 35
+}
+
+# so we can delcare it like that or create it from scratch by using {}
+new_dict = {}
+new_dict["Judah"] = 22 # add key value pairs using square brackets
+new_dict["Luca"] = 25
+new_dict["Noah"] = 27
+# dict values can be overwritten through reassigning
+# the values in a dict can be of any type including other data structures
+# the keys within a dictionary must be unique but the values can be the same
+
+Judah_dict = {"a": [1, 2, 3], "b": {4, 5, 6}, "c": {"x": 7, "y": 8, "z": 9}}
+# can check using in function for an element, the keys are ordered by order of insertion
+
+# looping is very similar to lists, you can either loop over the keys which lets you access the values in the keys
+# can also use the items which is more consice letting you loop over each pair instead of just key, however it takes 2 inputs that you iterate over rather than 1
+for key,value in Judah_dict.items():
+    print(key,value)
+# will print it line by line by pairing
+
+# example for contains duplicate characters in a string on how to get amount of each character
+
+def count_characters(word:str)-> Dict[str,int]: # function takes a string word and converts into a dict
+    count = {} # set an empty dictionary to add to
+
+    for char in word: # looping through each character
+        if char not in count:# if key does not exist yet cannot add it to its value, can access the count if you have not inserted the character yet
+            count[char] = 0 # if a character is not inserted yet just set its value to 0 to avoid key value error
+        count[char]+=1 # if encountered increase its value by 1
+    return count
 
 
+print(count_characters("Hello"))
 
-
-
-
-
-
+# can remove item from dictionary using .pop() function or del keyword
+# can also use .values in list to get the values of the keys if needed in a for loop or converting to a list
 
 
 
