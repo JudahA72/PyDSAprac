@@ -273,7 +273,8 @@ print(my_set) # now removed 1 from set
 # easy way to remove duplicates from a list by converting into a set then back into a new list
 # can also use the keyword in to check if an element is present in list, this is an o(1) ST operation
 # the in funciton acts as a bool check and returns True or False, can use len on sets
-
+for i in range(len(name)): # prints each index of the string range looks through the range of indexs and len is length/number of characters in a string 
+    print(i)
 
 
 # 10 - Dicts
