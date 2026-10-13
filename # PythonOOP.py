@@ -55,15 +55,78 @@ Hero.take_damage(12)
 
 # the attribues above for the SuperHero class are actually public attributes that is why they can be accessed outside of the class
 
+class SuperHero4:
+    def __init__(self, name: str, power_level: int):
+        self.__name = name                # private attribute
+        self.__power_level = power_level  # private attribute
+
+    # method to get power_level
+    def get_power_level(self) -> int:
+        return self.__power_level
+
+    def get_name(self):
+        return self.__name
+
+    def set_power_level(self, new_level: int) -> None:  # method to set power_level
+        if 0 <= new_level <= 100:          # validation
+            self.__power_level = new_level
+        else:
+            print("Power level must be between 0 and 100!")
+
+
+# this is meant to show case private attributes are hidden in superhero class implementation and only can be accessed by getter functions
+# setter functions allow you to modify the value of a private attribute and return 
+# can also use format of @property for getter and @name.setter for setter function
+
+
+Spiderman = SuperHero4("Spidey", 20)
+
+print(Spiderman.get_power_level()) # this how to access the private attribute through its method
+
+print(Spiderman.get_name())
+
+Spiderman.set_power_level(25) # can modify value from outside function using setter method
+print(Spiderman.get_power_level()) # value is now updated after modification
+
+# 3 Class Attributes
+# can add a class attribute to the class before def_init function that can be modified within the class and accessed outside of class
+
+class SmartDevice:
+    # Add your class attributes here
+    total_devices = 0
+    active_devices = 0
+    
+    def __init__(self, name: str):
+        self.name = name
+        SmartDevice.total_devices += 1  # Each new device adds to total
+
+    
+    
+        
+    # Implement these methods
+    def turn_on(self) -> None:
+        SmartDevice.active_devices +=1
+
+        
+    def turn_off(self) -> None:
+        SmartDevice.active_devices -=1
 
 
 
+# Don't change anything below this line
+tv = SmartDevice("TV")
+lights = SmartDevice("Lights")
+
+# Control devices
+tv.turn_on()
+lights.turn_on()
+tv.turn_off()
+
+print(f"Total Devices: {SmartDevice.total_devices}")    # Shows 2
+print(f"Active Devices: {SmartDevice.active_devices}")  # Shows 1
 
 
-
-
-
-
+# the actual attributes used in methods of a class are called instance attributes, so name would be an instance attribute in this function
 
 
 
