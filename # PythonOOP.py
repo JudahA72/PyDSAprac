@@ -128,7 +128,8 @@ print(f"Active Devices: {SmartDevice.active_devices}")  # Shows 1
 
 # the actual attributes used in methods of a class are called instance attributes, so name would be an instance attribute in this function
 
-
+# for example an instance attribute here would be the name in the def init function since its an instance of that internal function/method
+# the class attributes/global would be total devices and active devices 
 
 
     
