@@ -28,3 +28,5 @@ for a in arr:
 # Matrix manipulation 
 # row-major vs column major 
 # Leetcode 566
+
+# go back and watch video this weekend, get caught up to week 3 and finish neetcode sections(OOP and other one, recomplete the showcased leetcodes)
