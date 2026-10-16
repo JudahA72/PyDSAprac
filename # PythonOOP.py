@@ -108,22 +108,23 @@ class SmartDevice:
         SmartDevice.active_devices +=1
 
         
-    def turn_off(self) -> None:
+    @classmethod
+    def turn_off(cls) -> None:
         SmartDevice.active_devices -=1
 
 
 
 # Don't change anything below this line
 tv = SmartDevice("TV")
-lights = SmartDevice("Lights")
+
 
 # Control devices
 tv.turn_on()
-lights.turn_on()
+SmartDevice.turn_off() # example of using a class attribute
 tv.turn_off()
 
 print(f"Total Devices: {SmartDevice.total_devices}")    # Shows 2
-print(f"Active Devices: {SmartDevice.active_devices}")  # Shows 1
+print(f"Active Devices: {SmartDevice.active_devices}")  # Shows -1
 
 
 # the actual attributes used in methods of a class are called instance attributes, so name would be an instance attribute in this function
@@ -132,6 +133,30 @@ print(f"Active Devices: {SmartDevice.active_devices}")  # Shows 1
 # the class attributes/global would be total devices and active devices 
 
 # quick comment add for 10/15
+
+# static methods can do the same thing class methods can do, using @staticmethod
+
+
+# 3 - Inheiritance
+# allows you to create a new class based off of an existing class
+# called child class
+
+class Superhero5:
+    def __init__(self, name: str, power: str):
+        self.name = name
+        self.power = power
+
+class Avenger(Superhero5):
+    def fly(self):
+        print(f"{self.name} can fly using {self.power}")
+
+
+iron_man = Avenger("Iron Man", "repulsor beams")
+iron_man.fly() # use case of class function, it just adds method fly to it
+# child class contains all the properites(instance attributes in __init__ funciton )
+# when child class created, constructor of parent class is called and so the methods and attributes can be passed to it
+ # class childclass(ParentClass)
+    # Child class code here
 
 
     
