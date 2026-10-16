@@ -131,5 +131,7 @@ print(f"Active Devices: {SmartDevice.active_devices}")  # Shows 1
 # for example an instance attribute here would be the name in the def init function since its an instance of that internal function/method
 # the class attributes/global would be total devices and active devices 
 
+# quick comment add for 10/15
+
 
     
